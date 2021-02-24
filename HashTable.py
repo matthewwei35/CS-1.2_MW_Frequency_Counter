@@ -19,6 +19,7 @@ class HashTable:
     while counter < size:
       self.arr.append(LinkedList())
       counter += 1
+    
     return self.arr
 
   # 2️⃣ TODO: Create your own hash function.
@@ -26,10 +27,16 @@ class HashTable:
   # Hash functions are a function that turns each of these keys into an index value that we can use to decide where in our list each key:value pair should be stored. 
 
   def hash_func(self, key):
-    pass
+    # first_letter = key[0].lower()
+    # distance_from_a = ord(first_letter) - ord('a')
+    # index = distance_from_a % self.size
 
-
-
+    length = len(key)
+    last_letter = key[length -1].lower()
+    difference_from_z = ord('z') - ord(last_letter)
+    index = difference_from_z % self.size
+    
+    return index
 
   # 3️⃣ TODO: Complete the insert method.
 
@@ -37,8 +44,6 @@ class HashTable:
 
   def insert(self, key, value):
     pass
-
-
 
 
   # 4️⃣ TODO: Complete the print_key_values method.
@@ -53,6 +58,7 @@ class HashTable:
   # erase: 2
 
   def print_key_values(self):
+    # Use print_nodes but format to fit our case
     pass
 
 if __name__ == "__main__":
@@ -61,3 +67,5 @@ if __name__ == "__main__":
   print(ht.arr)
   print(len(ht.arr))
 
+  print(ht.hash_func('Matthew'))
+  print(ht.hash_func('Abraham'))
