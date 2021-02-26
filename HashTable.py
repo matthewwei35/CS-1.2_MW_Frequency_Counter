@@ -41,9 +41,9 @@ class HashTable:
   # Should insert a key value pair into the hash table, where the key is the word and the value is a counter for the number of times the word appeared. When inserting a new word in the hash table, be sure to check if there is a Node with the same key in the table already.
 
   def insert(self, key, value=1):
-    """Inserts a key value pair into the linked list according to the index. If the key doesn't al-
-    ready exists in the linked list, append it. If the key does exist, remove the already existing 
-    tuple, and then append a new tuple with the same key, but updated value."""
+    """Inserts a key value pair into the LinkedList according to the index. If the key doesn't alr-
+    eady exists in the LinkedList, append it. If the key does exist, remove the already existing t-
+    ple, and then append a new tuple with the same key, but updated value."""
     index = self.hash_func(key)
     item = (key, value)
     ll = self.arr[index]
@@ -65,7 +65,7 @@ class HashTable:
   # erase: 2
 
   def print_key_values(self):
-    """Traverses and prints out all the key value pairs found in the linked list of the hash table."""
+    """Traverses and prints out all the key value pairs found in the LinkedList of the hash table."""
     for ll in self.arr:
       ll.print_nodes()
     print('Finished counting!')
