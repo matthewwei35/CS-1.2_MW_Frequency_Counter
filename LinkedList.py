@@ -13,14 +13,11 @@ class LinkedList:
 
 
   def find(self,item):
-
     current = self.head
-
     found = False
     counter = 0
 
     while current != None and not found:
-
       if current.data[0] == item:
         found = True
       else:
@@ -28,10 +25,9 @@ class LinkedList:
         counter += 1
 
     if found:
-      return counter
+      pass
     else:
       return -1
-
 
 
   def length(self):
@@ -44,6 +40,24 @@ class LinkedList:
         current = current.next
         counter +=1
       return counter
+
+
+  def update(self, key):
+    current = self.head
+    found = False
+
+    while current != None and not found:
+      if current.data[0] == key:
+        found = True
+      else:
+        current = current.next
+
+    if found:
+      number_of_occurrence = current.data[1]
+      new_tuple = (current.data[0], (number_of_occurrence + 1))
+      current.data = new_tuple
+    else:
+      return -1
 
 
   def print_nodes(self):
