@@ -51,7 +51,7 @@ class LinkedList:
         found = True
       else:
         current = current.next
-
+    
     if found:
       number_of_occurrence = current.data[1]
       new_tuple = (current.data[0], (number_of_occurrence + 1))
@@ -67,5 +67,5 @@ class LinkedList:
       print('The linked list is empty.')
     else:
       for i in range(self.length()):
-        print(f'Node {i}: {current.data}')
+        print(f'{current.data[0]}: {current.data[1]}')
         current = current.next
