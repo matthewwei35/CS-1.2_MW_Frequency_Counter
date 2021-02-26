@@ -42,20 +42,23 @@ class LinkedList:
       return counter
 
 
-  def update(self, key):
-    current = self.head
+  def check_if_key_exists(self, key):
+    """Checks if the given key exists in the linked list, if it does exists, remove the old tuple, 
+    and create a new tuple with updated value by adding one. If it does not exist, just create a n-
+    ew tuple and append it to the linked list."""
+    current_tuple = self.head
     found = False
 
-    while current != None and not found:
-      if current.data[0] == key:
+    while current_tuple != None and not found:
+      if current_tuple.data[0] == key:
         found = True
       else:
-        current = current.next
+        current_tuple = current_tuple.next
     
     if found:
-      number_of_occurrence = current.data[1]
-      new_tuple = (current.data[0], (number_of_occurrence + 1))
-      current.data = new_tuple
+      number_of_occurrence = current_tuple.data[1]
+      new_tuple = (current_tuple.data[0], (number_of_occurrence + 1))
+      current_tuple.data = new_tuple
     else:
       return -1
 
@@ -64,7 +67,7 @@ class LinkedList:
     current = self.head
     
     if current == None:
-      print('The linked list is empty.')
+      pass
     else:
       for i in range(self.length()):
         print(f'{current.data[0]}: {current.data[1]}')
