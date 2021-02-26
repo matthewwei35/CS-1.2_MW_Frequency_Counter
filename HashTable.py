@@ -61,8 +61,10 @@ class HashTable:
   # erase: 2
 
   def print_key_values(self):
-    # Use print_nodes but format to fit our case
-    pass
+    for ll in self.arr:
+      ll.print_nodes()
+    print('Finished counting!')
+    
 
 if __name__ == "__main__":
 
@@ -70,5 +72,11 @@ if __name__ == "__main__":
   print(ht.arr)
   print(len(ht.arr))
 
-  print(ht.hash_func('Matthew'))
-  print(ht.hash_func('Abraham'))
+  print(ht.hash_func('Hello'))
+
+  ht.insert('Hello', 1)
+  ht.insert('Heo', 1)
+  ht.insert('Hello', 1)
+  ht.insert('Heo', 1)
+
+  ht.print_key_values()
